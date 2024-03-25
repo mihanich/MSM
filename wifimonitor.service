@@ -1,6 +1,6 @@
 [Unit]
 Description=WiFi Monitor and Auto-Connect Script
-After=network.target
+After=multi-user.target
 
 [Service]
 Type=simple
@@ -9,4 +9,4 @@ WorkingDirectory=/home/pi/run
 ExecStart=/home/pi/run/wifimonitor.sh
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
