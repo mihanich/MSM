@@ -8,7 +8,9 @@ sudo apt-get -y install curl && curl -ksL https://dtcooper.github.io/raspotify/i
 
 ### asus tinker board
 # https://docs.spotifyd.rs/installation/Ubuntu.html#running-spotifyd
-curl --proto '=https' --tlsv1.2 -ksSf https://sh.rustup.rs | bash
+wget https://static.rust-lang.org/rustup/dist/armv7-unknown-linux-gnueabihf/rustup-init
+chmod +x rustup-init
+./rustup-init
 sudo apt install libasound2-dev libssl-dev pkg-config
 git clone https://github.com/Spotifyd/spotifyd.git
 cd spotifyd
