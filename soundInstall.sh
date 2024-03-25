@@ -7,6 +7,15 @@ sudo apt-get -y install curl && curl -ksL https://dtcooper.github.io/raspotify/i
 #LIBRESPOT_DEVICE="hw:CARD=Headphones,DEV=0" --- for raspberry pi
 
 ### asus tinker board
+# https://docs.spotifyd.rs/installation/Ubuntu.html#running-spotifyd
+curl --proto '=https' --tlsv1.2 -ksSf https://sh.rustup.rs | bash
+sudo apt install libasound2-dev libssl-dev pkg-config
+git clone https://github.com/Spotifyd/spotifyd.git
+cd spotifyd
+cargo build --release
+sudo cp target/release/spotifyd /usr/bin/spotifyd
+sudo cp contrib/spotifyd.service /etc/systemd/system/spotifyd.service
+systemctl --user enable spotifyd.service --now
 
 
 ### AirPlay
