@@ -53,6 +53,8 @@ git clone https://github.com/Jopyth/MMM-Remote-Control.git
 </br>
 git clone https://github.com/kevinatown/MMM-Screencast.git
 </br>
+git clone https://github.com/fewieden/MMM-ip.git
+</br>
 
 docker exec -it mm /bin/bash</br></br>
 #and install both</br>
