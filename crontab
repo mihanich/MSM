@@ -1,0 +1,3 @@
+@reboot /home/linaro/./start.sh
+40 06 * * * /home/linaro/./on.sh
+50 22 * * * /home/linaro/./off.sh
