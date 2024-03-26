@@ -1,13 +1,11 @@
 [Unit]
-Description=WiFi Monitor and Auto-Connect Script
-After=multi-user.target
+Description=WiFi Monitor Script
+After=network.target
 
 [Service]
-ExecStartPre=/bin/sleep 30
 Type=simple
-User=linaro
 WorkingDirectory=/home/linaro/run
 ExecStart=/home/linaro/run/wifimonitor.sh
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
