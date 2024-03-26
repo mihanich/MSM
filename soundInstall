@@ -7,6 +7,7 @@ sudo apt-get -y install curl && curl -ksL https://dtcooper.github.io/raspotify/i
 #LIBRESPOT_DEVICE="hw:CARD=Headphones,DEV=0" --- for raspberry pi
 
 ### asus tinker board
+###!!!! set output_device = "plughw:0,2"; for tinkerboard s 1
 # https://docs.spotifyd.rs/installation/Ubuntu.html#running-spotifyd
 wget https://static.rust-lang.org/rustup/dist/armv7-unknown-linux-gnueabihf/rustup-init
 chmod +x rustup-init
@@ -39,6 +40,7 @@ sudo make install
 
 sudo systemctl enable shairport-sync
 
+###!!!! set output_device = "plughw:0,2"; for tinkerboard s 1
 #tune config in /etc/shairport-sync.conf
 #alsa =
 #{
