@@ -41,3 +41,7 @@ sudo systemctl enable shairport-sync
 #
 sudo systemctl restart shairport-sync.service
 iwconfig wlan0 power off
+
+### asustinker board on debian buster
+sudo apt install shairport-sync
+#reconfigure service file - remove group and set user to linaro / pi whatever

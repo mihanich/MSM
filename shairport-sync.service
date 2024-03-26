@@ -1,0 +1,20 @@
+
+[Unit]
+Description=ShairportSync AirTunes receiver
+Documentation=man:shairport-sync(7)
+Documentation=file:///usr/share/doc/shairport-sync/README.md.gz
+Documentation=https://github.com/mikebrady/shairport-sync
+After=sound.target
+Requires=avahi-daemon.service
+After=avahi-daemon.service
+
+[Service]
+Type=forking
+Restart=on-failure
+EnvironmentFile=-/etc/default/shairport-sync
+ExecStart=/usr/bin/shairport-sync --daemon $DAEMON_ARGS
+User=linaro
+PIDFile=/run/shairport-sync/shairport-sync.pid
+
+[Install]
+WantedBy=multi-user.target
