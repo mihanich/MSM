@@ -20,7 +20,7 @@ git clone https://github.com/Spotifyd/spotifyd.git
 cd spotifyd
 cargo build --release
 sudo cp target/release/spotifyd /usr/bin/spotifyd
-sudo cp contrib/spotifyd.service /etc/systemd/system/spotifyd.service
+sudo cp contrib/spotifyd.service /etc/systemd/user/spotifyd.service
 systemctl --user enable spotifyd.service --now
 
 
