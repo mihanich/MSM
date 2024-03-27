@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/linaro/run
-ExecStart=/home/linaro/run/wifimonitor.sh
+WorkingDirectory=/home/linaro/MSM/tinkerboard/run
+ExecStart=/home/linaro/MSM/tinkerboard/run/wifimonitor.sh
 
 [Install]
 WantedBy=multi-user.target

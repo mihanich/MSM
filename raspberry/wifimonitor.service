@@ -1,0 +1,11 @@
+[Unit]
+Description=WiFi Monitor Script
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/MSM/raspberry/run
+ExecStart=/home/pi/MSM/raspberry/run/wifimonitor.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -11,19 +11,14 @@ var config =
       header: '',
       config: {}
     },
-{
-    module: 'MMM-ip',
-    position: 'top_right', // Remove the position if you want to run the module in voice only mode
-    config: {
-	families: ['IPv4'],
-	fontSize: 5,
-        // all your config options, which are different than their default values
-    }
-},
     {
-      module: 'updatenotification',
-      header: '',
-      config: {}
+        module: 'MMM-ip',
+        position: 'top_right', // Remove the position if you want to run the module in voice only mode
+        config: {
+          families: ['IPv4'],
+          fontSize: 5,
+            // all your config options, which are different than their default values
+        }
     },
     {
       module: 'clock',
@@ -31,19 +26,6 @@ var config =
       header: '',
       config: {
         timezone: 'Europe/Kyiv'
-      }
-    },
-    {
-      module: 'calendar',
-      header: 'US Holidays',
-      config: {
-        calendars: [
-          {
-            fetchInterval: 604800000,
-            symbol: 'calendar-check',
-            url: 'https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics'
-          }
-        ]
       }
     },
     {
@@ -110,18 +92,6 @@ var config =
       config: {
         showModuleApiMenu: true,
         secureEndpoints: true
-      }
-    },
-    {
-      module: 'newsfeed',
-      header: '',
-      config: {
-        feeds: [
-          {
-            title: 'New York Times',
-            url: 'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml'
-          }
-        ]
       }
     },
     {

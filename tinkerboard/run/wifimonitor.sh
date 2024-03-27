@@ -17,8 +17,8 @@ check_wifi() {
 run_wificonnect() {
   echo "Starting wificonnect script..."
   # Replace 'path/to/wificonnect' with the actual path to your wificonnect script
-  sudo /home/pi/run/wifi-connect -s MixanichSmartMirror
-  bash /home/pi/run/restartPM2.sh
+  sudo /home/pi/MSM/tinkerboard/run/wifi-connect -s MixanichSmartMirror
+  docker restart mm
   echo "wificonnect run script finished."
 }
 
