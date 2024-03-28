@@ -1,5 +1,5 @@
 cd ~/MSM/pi/run
-tar -xvzf wifi-connect-v4.4.6-linux-aarch64.tar
+tar -xvzf wifi-connect-aarch.tar.gz
 chmod +x wifimonitor.sh
 cd ..
 sudo cp wifimonitor.service /etc/systemd/system/

@@ -1,5 +1,5 @@
-cd ~/MSM/linaro/run
-tar -xvzf wifi-connect-v4.4.6-linux-aarch64.tar
+cd ~/MSM/tinkerboard/run
+tar -xvzf wifi-connect-arm.tar.gz
 chmod +x wifimonitor.sh
 cd ..
 sudo cp wifimonitor.service /etc/systemd/system/
@@ -34,7 +34,7 @@ sudo usermod -aG docker $USER &
 newgrp docker &
 cd ~
 git clone https://gitlab.com/khassel/magicmirror.git
-cp ~/MSM/linaro/docker-compose.yml ~/magicmirror/run/docker-compose.yml
+cp ~/MSM/tinkerboard/docker-compose.yml ~/magicmirror/run/docker-compose.yml
 cd ~/magicmirror/run
 docker compose up -d
 sleep 20
