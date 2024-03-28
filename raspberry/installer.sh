@@ -7,7 +7,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable wifimonitor.service 
 sudo systemctl start wifimonitor.service
 #install spotifyd and shairport-sync
-sleep 30
+sleep 60
 sudo apt update
 echo 'install sound recievers'
 cd ~/MSM/
