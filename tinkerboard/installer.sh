@@ -7,7 +7,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable wifimonitor.service 
 sudo systemctl start wifimonitor.service
 #install spotifyd and shairport-sync
-sudo apt remove aiccagent
+sudo apt -y remove aiccagent
 echo 'install sound recievers'
 cd ..
 chmod +x spotifyd
@@ -15,11 +15,11 @@ sudo cp spotifyd /usr/bin/
 sudo apt install -y libasound2-dev libssl-dev pkg-config
 sudo cp spotifyd.service /etc/systemd/user/
 systemctl --user enable spotifyd.service --now
-sudo apt install shairport-sync
+sudo apt install -y shairport-sync
 sudo systemctl restart shairport-sync.service
 #install magicmirror
 sudo apt update
-sudo apt install ca-certificates curl
+sudo apt install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -kfsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -28,7 +28,7 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update 
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
 sudo usermod -aG docker $USER
 newgrp docker
 cd ~
