@@ -30,8 +30,8 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update 
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
-sudo usermod -aG docker $USER &
-newgrp docker &
+sudo usermod -aG docker $USER
+newgrp docker
 cd ~
 git clone https://gitlab.com/khassel/magicmirror.git
 cp ~/MSM/pi/docker-compose.yml ~/magicmirror/run/docker-compose.yml

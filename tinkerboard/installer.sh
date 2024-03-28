@@ -30,6 +30,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update 
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+#maybe split this in separate file?
 sudo groupadd docker
 sudo usermod -aG docker linaro
 newgrp docker
@@ -39,21 +40,21 @@ cd ~
 git clone https://gitlab.com/khassel/magicmirror.git
 cp ~/MSM/tinkerboard/docker-compose.yml ~/magicmirror/run/docker-compose.yml
 cd ~/magicmirror/run
-docker compose up -d
+sudo docker compose up -d
 sleep 20
 cd ~/magicmirror/mounts/modules
 git clone https://github.com/fewieden/MMM-ip.git
 git clone https://github.com/Jopyth/MMM-Remote-Control.git
 git clone https://github.com/kevinatown/MMM-Screencast.git
 cp ~/MSM/MMM/config.js ~/magicmirror/mounts/config/config.js
-echo ' thin ice goes here !!!'
+echo ' thin ice goes here !!! do manually !'
 docker exec -it mm /bin/bash
 cd modules/MMM-Remote-Control/
 npm install
 cd ../MMM-Screencast/
 npm install
 exit
-docker restart mm
+sudo docker restart mm
 #install splash screen 
 cd ~/MSM/splashscreen
 sudo cp mixanich/ /usr/share/plymouth/themes/
