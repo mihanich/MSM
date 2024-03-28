@@ -33,5 +33,5 @@ while true; do
   fi
 
   # Wait for 5 minutes before checking again
-  sleep 300  # Change this to 300 seconds (5 minutes)
+  sleep 900  # Change this to 900 seconds (15 minutes)
 done

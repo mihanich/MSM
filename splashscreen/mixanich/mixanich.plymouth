@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Mixanich Smart Mirror
+Description=Mirror Splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/mixanich
+ScriptFile=/usr/share/plymouth/themes/mixanich/mixanich.script
