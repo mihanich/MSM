@@ -1,6 +1,7 @@
 cd ~/MSM/tinkerboard/run
-tar -xvzf wifi-connect-arm.tar.gz
+tar -xvzf --keep-old-files wifi-connect-arm.tar.gz
 chmod +x wifimonitor.sh
+echo fs.inotify.max_user_watches=65536 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 cd ..
 sudo cp wifimonitor.service /etc/systemd/system/
 sudo systemctl daemon-reload 
@@ -10,6 +11,7 @@ echo '!!! connect to wifi in next minute !!!'
 #install spotifyd and shairport-sync
 sleep 60
 sudo apt update
+sudo apt remove -y aiccagent
 echo 'install sound recievers'
 cd ~/MSM/
 chmod +rwx spotifyd
@@ -18,7 +20,7 @@ sudo apt install -y libasound2-dev libssl-dev pkg-config
 sudo cp spotifyd.service /etc/systemd/user/
 systemctl --user enable spotifyd.service --now
 sudo apt install -y shairport-sync
-echo '!tune of sync goes here manually!'
+echo '!!! ### tune of sync goes here manually ### !!!'
 sudo systemctl restart shairport-sync.service
 #install magicmirror
 sudo apt install ca-certificates curl
@@ -29,14 +31,13 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt update 
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-#maybe split this in separate file?
-sudo groupadd docker
-sudo usermod -aG docker linaro
-newgrp docker
-sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
-sudo chmod g+rwx "$HOME/.docker" -R
+# post install of docker do manually
+# sudo groupadd docker
+# sudo usermod -aG docker linaro
+# newgrp docker
+# sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+# sudo chmod g+rwx "$HOME/.docker" -R
 
 cd ~
 git clone https://gitlab.com/khassel/magicmirror.git
@@ -59,7 +60,7 @@ echo ' thin ice goes here !!! do manually !'
 # sudo docker restart mm
 ### install splash screen 
 cd ~/MSM/splashscreen
-sudo cp mixanich/ /usr/share/plymouth/themes/
+sudo cp -r mixanich/ /usr/share/plymouth/themes/
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/mixanich/mixanich.plymouth 100
 sudo update-initramfs -u
 echo 'do not forget to tune sink in /etc/shairport-sync.conf to alsa set output_device = "plughw:0,2";'
