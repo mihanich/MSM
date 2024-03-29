@@ -6,13 +6,14 @@ sudo cp wifimonitor.service /etc/systemd/system/
 sudo systemctl daemon-reload 
 sudo systemctl enable wifimonitor.service 
 sudo systemctl start wifimonitor.service
+echo '!!! connect to wifi in next minute !!!'
 #install spotifyd and shairport-sync
 sleep 60
 sudo apt update
 echo 'install sound recievers'
 cd ~/MSM/
 chmod +rwx spotifyd
-sudo cp spotifyd /usr/bin/spotifyd
+sudo cp ~/MSM/spotifyd /usr/bin/spotifyd
 sudo apt install -y libasound2-dev libssl-dev pkg-config
 sudo cp spotifyd.service /etc/systemd/user/
 systemctl --user enable spotifyd.service --now
@@ -36,6 +37,7 @@ sudo usermod -aG docker linaro
 newgrp docker
 sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 sudo chmod g+rwx "$HOME/.docker" -R
+
 cd ~
 git clone https://gitlab.com/khassel/magicmirror.git
 cp ~/MSM/tinkerboard/docker-compose.yml ~/magicmirror/run/docker-compose.yml
@@ -48,14 +50,14 @@ git clone https://github.com/Jopyth/MMM-Remote-Control.git
 git clone https://github.com/kevinatown/MMM-Screencast.git
 cp ~/MSM/MMM/config.js ~/magicmirror/mounts/config/config.js
 echo ' thin ice goes here !!! do manually !'
-docker exec -it mm /bin/bash
-cd modules/MMM-Remote-Control/
-npm install
-cd ../MMM-Screencast/
-npm install
-exit
-sudo docker restart mm
-#install splash screen 
+# docker exec -it mm /bin/bash
+# cd modules/MMM-Remote-Control/
+# npm install
+# cd ../MMM-Screencast/
+# npm install
+# exit
+# sudo docker restart mm
+### install splash screen 
 cd ~/MSM/splashscreen
 sudo cp mixanich/ /usr/share/plymouth/themes/
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/mixanich/mixanich.plymouth 100
