@@ -1,30 +1,8 @@
-sudo apt update
-cd ~/MSM/tinkerboard/run
-tar -xvzf --keep-old-files wifi-connect-arm.tar.gz
-chmod +x wifimonitor.sh
-echo fs.inotify.max_user_watches=65536 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-cd ..
-sudo cp wifimonitor.service /etc/systemd/system/
-sudo systemctl daemon-reload 
-sudo systemctl enable wifimonitor.service 
-sudo systemctl start wifimonitor.service
-echo '!!! connect to wifi in next minute !!!'
-#install spotifyd and shairport-sync
-sleep 60
+#pre install of packages
 sudo apt update
 sudo apt remove -y aiccagent
-echo 'install sound recievers'
-cd ~/MSM/
-chmod +rwx spotifyd
-sudo cp ~/MSM/spotifyd /usr/bin/spotifyd
-sudo apt install -y libasound2-dev libssl-dev pkg-config
-sudo cp spotifyd.service /etc/systemd/user/
-systemctl --user enable spotifyd.service --now
-sudo apt install -y shairport-sync
-echo '!!! ### tune of sync goes here manually ### !!!'
-sudo systemctl restart shairport-sync.service
-#install magicmirror
-sudo apt install ca-certificates curl
+sudo apt install -y libasound2-dev libssl-dev pkg-config shairport-sync ca-certificates curl
+# docker install
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -kfsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -41,6 +19,27 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 # sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 # sudo chmod g+rwx "$HOME/.docker" -R
 
+cd ~/MSM/tinkerboard/run
+tar -xvzf --skip-old-files wifi-connect-arm.tar.gz
+chmod +x wifimonitor.sh
+echo fs.inotify.max_user_watches=65536 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+cd ..
+sudo cp wifimonitor.service /etc/systemd/system/
+sudo systemctl daemon-reload 
+sudo systemctl enable wifimonitor.service 
+sudo systemctl start wifimonitor.service
+echo '!!! connect to wifi in next minute !!!'
+#install spotifyd and shairport-sync
+sleep 60
+echo 'install sound recievers'
+cd ~/MSM/
+chmod +rwx spotifyd
+sudo cp ~/MSM/spotifyd /usr/bin/spotifyd
+sudo cp spotifyd.service /etc/systemd/user/
+systemctl --user enable spotifyd.service --now
+echo '!!! ### tune of sync goes here manually ### !!!'
+sudo systemctl restart shairport-sync.service
+#install magicmirror
 cd ~
 git clone https://gitlab.com/khassel/magicmirror.git
 cp ~/MSM/tinkerboard/docker-compose.yml ~/magicmirror/run/docker-compose.yml
