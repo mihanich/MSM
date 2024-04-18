@@ -50,6 +50,7 @@ sleep 20
 #git clone https://github.com/fewieden/MMM-ip.git
 #git clone https://github.com/Jopyth/MMM-Remote-Control.git
 #git clone https://github.com/kevinatown/MMM-Screencast.git
+#git clone https://github.com/AdamMoses-GitHub/MMM-ImageSlideshow.git
 cp ~/MSM/MMM/config.js ~/magicmirror/mounts/config/config.js
 echo ' thin ice goes here !!! do manually !'
 # docker exec -it mm /bin/bash
