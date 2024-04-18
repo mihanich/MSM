@@ -1,3 +1,4 @@
+sudo apt update
 cd ~/MSM/tinkerboard/run
 tar -xvzf --keep-old-files wifi-connect-arm.tar.gz
 chmod +x wifimonitor.sh
@@ -31,6 +32,7 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 # post install of docker do manually
 # sudo groupadd docker
@@ -45,10 +47,10 @@ cp ~/MSM/tinkerboard/docker-compose.yml ~/magicmirror/run/docker-compose.yml
 cd ~/magicmirror/run
 sudo docker compose up -d
 sleep 20
-cd ~/magicmirror/mounts/modules
-git clone https://github.com/fewieden/MMM-ip.git
-git clone https://github.com/Jopyth/MMM-Remote-Control.git
-git clone https://github.com/kevinatown/MMM-Screencast.git
+#cd ~/magicmirror/mounts/modules
+#git clone https://github.com/fewieden/MMM-ip.git
+#git clone https://github.com/Jopyth/MMM-Remote-Control.git
+#git clone https://github.com/kevinatown/MMM-Screencast.git
 cp ~/MSM/MMM/config.js ~/magicmirror/mounts/config/config.js
 echo ' thin ice goes here !!! do manually !'
 # docker exec -it mm /bin/bash

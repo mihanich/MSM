@@ -11,15 +11,15 @@ var config =
       header: '',
       config: {}
     },
-    {
-        module: 'MMM-ip',
-        position: 'top_right', // Remove the position if you want to run the module in voice only mode
-        config: {
-          families: ['IPv4'],
-          fontSize: 5,
-            // all your config options, which are different than their default values
-        }
-    },
+    // {
+    //     module: 'MMM-ip',
+    //     position: 'top_right', // Remove the position if you want to run the module in voice only mode
+    //     config: {
+    //       families: ['IPv4'],
+    //       fontSize: 5,
+    //         // all your config options, which are different than their default values
+    //     }
+    // },
     {
       module: 'clock',
       position: 'top_left',
@@ -87,22 +87,22 @@ var config =
         lang: 'ua'
       }
     },
-    {
-      module: 'MMM-Remote-Control',
-      config: {
-        showModuleApiMenu: true,
-        secureEndpoints: true
-      }
-    },
-    {
-      module: 'MMM-Screencast',
-      position: 'bottom_right',
-      config: {
-        position: 'bottomRight',
-        height: 480,
-        width: 640
-      }
-    }
+    // {
+    //   module: 'MMM-Remote-Control',
+    //   config: {
+    //     showModuleApiMenu: true,
+    //     secureEndpoints: true
+    //   }
+    // },
+    // {
+    //   module: 'MMM-Screencast',
+    //   position: 'bottom_right',
+    //   config: {
+    //     position: 'bottomRight',
+    //     height: 480,
+    //     width: 640
+    //   }
+    // }
   ],
   useHttps: false,
   httpsPrivateKey: '',
