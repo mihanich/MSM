@@ -11,6 +11,13 @@ var config =
       header: '',
       config: {}
     },
+    {
+      module: 'MMM-ImageSlideshow',
+      position: 'lower_third',
+      config: {
+        imagePaths: ['modules/MMM-ImageSlideshow/example1']
+      }
+    },
     // {
     //     module: 'MMM-ip',
     //     position: 'top_right', // Remove the position if you want to run the module in voice only mode
