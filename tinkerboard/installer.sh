@@ -65,4 +65,5 @@ cd ~/MSM/splashscreen
 sudo cp -r mixanich/ /usr/share/plymouth/themes/
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/mixanich/mixanich.plymouth 100
 sudo update-initramfs -u
+sudo plymouth-set-default-theme -R mixanich
 echo 'do not forget to tune sink in /etc/shairport-sync.conf to alsa set output_device = "plughw:0,2";'
