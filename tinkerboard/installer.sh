@@ -1,7 +1,7 @@
 #pre install of packages
 sudo apt update
 sudo apt remove -y aiccagent
-sudo apt install -y libasound2-dev libssl-dev pkg-config shairport-sync ca-certificates curl
+sudo apt install -y mc libasound2-dev libssl-dev pkg-config shairport-sync ca-certificates curl
 # docker install
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -kfsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
