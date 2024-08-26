@@ -41,16 +41,17 @@ echo '!!! ### tune of sync goes here manually ### !!!'
 sudo systemctl restart shairport-sync.service
 #install magicmirror
 cd ~
-git clone https://gitlab.com/khassel/magicmirror.git
+git clone https://gitlab.com/mixanich/magicmirror.git
 cp ~/MSM/tinkerboard/docker-compose.yml ~/magicmirror/run/docker-compose.yml
 cd ~/magicmirror/run
 sudo docker compose up -d
 sleep 20
 #cd ~/magicmirror/mounts/modules
-#git clone https://github.com/fewieden/MMM-ip.git
+#git clone https://github.com/mihanich/MMM-ip.git
 #git clone https://github.com/Jopyth/MMM-Remote-Control.git
 #git clone https://github.com/kevinatown/MMM-Screencast.git
-#git clone https://github.com/AdamMoses-GitHub/MMM-ImageSlideshow.git
+#git clone https://github.com/mihanich/MMM-ImageSlideshow.git
+#git clone https://github.com/mihanich/MMM-SimpleLogo.git
 cp ~/MSM/MMM/config.js ~/magicmirror/mounts/config/config.js
 echo ' thin ice goes here !!! do manually !'
 # docker exec -it mm /bin/bash
