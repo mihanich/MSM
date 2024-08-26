@@ -50,11 +50,11 @@ remove vchq device
 
 cd ~magicmirror/mounts/modules/
 
-git clone https://github.com/mixanich/MMM-Remote-Control.git
+git clone https://github.com/mihanich/MMM-Remote-Control.git
 
-git clone https://github.com/mixanich/MMM-Screencast.git
+git clone https://github.com/mihanich/MMM-Screencast.git
 
-git clone https://github.com/mixanich/MMM-ip.git
+git clone https://github.com/mihanich/MMM-ip.git
 
 
 docker exec -it mm /bin/bash
