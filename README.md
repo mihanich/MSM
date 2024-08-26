@@ -39,7 +39,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 sudo usermod -aG docker $USER
 
-git clone https://gitlab.com/khassel/magicmirror.git
+git clone [https://gitlab.com/khassel/magicmirror.git](https://gitlab.com/mixanich/magicmirror)
 
 cd ./magicmirror/run
 
@@ -50,11 +50,11 @@ remove vchq device
 
 cd ~magicmirror/mounts/modules/
 
-git clone https://github.com/Jopyth/MMM-Remote-Control.git
+git clone https://github.com/mixanich/MMM-Remote-Control.git
 
-git clone https://github.com/kevinatown/MMM-Screencast.git
+git clone https://github.com/mixanich/MMM-Screencast.git
 
-git clone https://github.com/fewieden/MMM-ip.git
+git clone https://github.com/mixanich/MMM-ip.git
 
 
 docker exec -it mm /bin/bash
