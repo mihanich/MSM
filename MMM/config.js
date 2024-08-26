@@ -12,11 +12,16 @@ var config =
       config: {}
     },
     {
-      module: 'MMM-ImageSlideshow',
-      position: 'lower_third',
-      config: {
-        imagePaths: ['modules/MMM-ImageSlideshow/example1']
-      }
+     module: "MMM-ImagesPhotos",
+     position: "middle_center",
+     config: {
+      opacity: 1,
+      animationSpeed: 300,
+      updateInterval: 10000,
+      maxHeight: "600px",
+      maxWidth:"600px",
+      sequential: false  // process the image list randomly
+     }
     },
     // {
     //     module: 'MMM-ip',
