@@ -56,6 +56,8 @@ git clone https://github.com/mihanich/MMM-Screencast.git
 
 git clone https://github.com/mihanich/MMM-ip.git
 
+git clone https://github.com/mihanich/MMM-ImagesPhotos.git
+
 
 docker exec -it mm /bin/bash
 #and install both
