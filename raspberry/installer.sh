@@ -42,7 +42,9 @@ cd ~/magicmirror/mounts/modules
 #git clone https://github.com/mihanich/MMM-ip.git
 #git clone https://github.com/Jopyth/MMM-Remote-Control.git
 #git clone https://github.com/kevinatown/MMM-Screencast.git
-#git clone https://github.com/mihanich/MMM-ImageSlideshow.git
+#git clone https://github.com/mihanich/MMM-ImagesPhotos.git
+# cd MMM-ImagesPhotos
+# npm install
 #git clone https://github.com/mihanich/MMM-SimpleLogo.git
 cp ~/MSM/MMM/config.js ~/magicmirror/mounts/config/config.js
 echo ' thin ice goes here !!!'
