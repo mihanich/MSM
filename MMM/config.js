@@ -12,6 +12,16 @@ var config =
       config: {}
     },
     {
+        module: 'MMM-SimpleLogo',
+        position: 'top_center',    // This can be any of the regions.
+        config: {
+                text: '',
+                width: '500px',
+            // The config property is optional.
+            // See 'Configuration options' for more information.
+        }
+    },
+    {
      module: "MMM-ImagesPhotos",
      position: "middle_center",
      config: {
@@ -23,15 +33,6 @@ var config =
       sequential: false  // process the image list randomly
      }
     },
-    // {
-    //     module: 'MMM-ip',
-    //     position: 'top_right', // Remove the position if you want to run the module in voice only mode
-    //     config: {
-    //       families: ['IPv4'],
-    //       fontSize: 5,
-    //         // all your config options, which are different than their default values
-    //     }
-    // },
     {
       module: 'clock',
       position: 'top_left',
@@ -99,6 +100,15 @@ var config =
         lang: 'ua'
       }
     },
+        {
+         module: 'MMM-ip',
+         position: 'top_right', // Remove the position if you want to run the module in voice only mode
+         config: {
+           families: ['IPv4'],
+           fontSize: 6,
+             // all your config options, which are different than their default values
+         }
+     },
     // {
     //   module: 'MMM-Remote-Control',
     //   config: {
