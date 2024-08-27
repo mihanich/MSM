@@ -38,6 +38,8 @@ sudo cp ~/MSM/spotifyd /usr/bin/spotifyd
 sudo cp spotifyd.service /etc/systemd/user/
 systemctl --user enable spotifyd.service --now
 echo '!!! ### tune of sync goes here manually ### !!!'
+echo 'do not forget to tune sink in /etc/shairport-sync.conf to alsa set output_device = "plughw:0,2";'
+
 sudo systemctl restart shairport-sync.service
 #install magicmirror
 cd ~
@@ -69,4 +71,8 @@ sudo cp -r mixanich/ /usr/share/plymouth/themes/
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/mixanich/mixanich.plymouth 100
 sudo update-initramfs -u
 sudo plymouth-set-default-theme -R mixanich
-echo 'do not forget to tune sink in /etc/shairport-sync.conf to alsa set output_device = "plughw:0,2";'
+
+cd ~/MSM/screen-scripts
+chmod +x *
+cp * ~
+# copy crontab-example to crontab
