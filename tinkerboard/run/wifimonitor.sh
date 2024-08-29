@@ -23,6 +23,8 @@ run_wificonnect() {
 }
 
 # Initial check
+# wait 3 minutes for inet appearance
+sleep 180
 check_wifi
 
 # Loop to monitor WiFi connection
